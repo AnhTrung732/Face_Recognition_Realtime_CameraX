@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Face_Recognition_Realtime_CameraX</string>
+    <string name="recognize">Recognize</string>
+</resources>
