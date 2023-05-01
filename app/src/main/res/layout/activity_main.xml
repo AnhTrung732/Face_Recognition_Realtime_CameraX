@@ -6,18 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <androidx.appcompat.widget.SwitchCompat
-        android:id="@+id/detectSwitch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="36dp"
-        android:background="@color/white"
-        android:elevation="5dp"
-        android:text="@string/recognize"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="@+id/recognizeView"
-        app:layout_constraintEnd_toEndOf="@+id/recognizeView"
-        app:layout_constraintStart_toStartOf="parent" />
+    <androidx.camera.view.PreviewView
+        android:id="@+id/preview_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <com.example.face_recognition_realtime_camerax.CustomImageView.CustomImageView
         android:id="@+id/recognizeView"
@@ -28,12 +24,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.camera.view.PreviewView
-        android:id="@+id/previewView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+    <TextView
+        android:id="@+id/log_textview"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:background="@drawable/textview_background"
+        android:maxHeight="36dp"
+        android:text="Welcome!"
+        android:padding="16dp"
+        android:gravity="bottom"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
