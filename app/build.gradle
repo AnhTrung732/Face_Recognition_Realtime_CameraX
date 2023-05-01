@@ -5,15 +5,20 @@ plugins {
 android {
     namespace 'com.example.face_recognition_realtime_camerax'
     compileSdk 33
-
+    buildFeatures {
+        viewBinding true
+    }
     defaultConfig {
         applicationId "com.example.face_recognition_realtime_camerax"
         minSdk 21
         targetSdk 33
         versionCode 1
         versionName "1.0"
-
+        ndk {
+            abiFilters 'armeabi-v7a'
+        }
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
     }
 
     buildTypes {
@@ -25,13 +30,6 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
-    }
-    android {
-        defaultConfig {
-            ndk {
-                abiFilters 'armeabi-v7a'
-            }
-        }
     }
     aaptOptions {
         noCompress "tflite"
@@ -50,6 +48,15 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
+    constraints {
+        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.0") {
+            because("kotlin-stdlib-jdk7 is now a part of kotlin-stdlib")
+        }
+        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.0") {
+            because("kotlin-stdlib-jdk8 is now a part of kotlin-stdlib")
+        }
+    }
+
     //CameraX
     def cameraxVersion = "1.3.0-alpha06"
     implementation "androidx.camera:camera-core:${cameraxVersion}"
@@ -61,17 +68,13 @@ dependencies {
 
     //tensorflow-lite
     implementation 'org.tensorflow:tensorflow-lite:0.0.0-nightly'
+    implementation 'org.tensorflow:tensorflow-lite:2.11.0'
+    implementation 'org.tensorflow:tensorflow-lite-gpu:2.11.0'
+    implementation 'org.tensorflow:tensorflow-lite-gpu-api:2.11.0'
+    implementation 'org.tensorflow:tensorflow-lite-support:0.4.2'
 
+    //guava
     implementation 'com.google.guava:guava:28.2-jre'
-
-    constraints {
-        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.0") {
-            because("kotlin-stdlib-jdk7 is now a part of kotlin-stdlib")
-        }
-        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.0") {
-            because("kotlin-stdlib-jdk8 is now a part of kotlin-stdlib")
-        }
-    }
 
 
 

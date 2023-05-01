@@ -11,7 +11,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.graphics.Rect;
 
-import com.example.face_recognition_realtime_camerax.mtcnn.Box;
+import com.example.face_recognition_realtime_camerax.model.mtcnn.Box;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -20,7 +20,6 @@ import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
 
 public class MyUtil {
-
 
     public static Bitmap readFromAssets(Context context, String filename){
         Bitmap bitmap;
